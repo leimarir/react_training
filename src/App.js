@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
-import Modal from './Modal';
-import Child from './Child';
+import Display from './Components/Display';
+import ButtonAppBar from './Components/ButtonAppBar';
+import FormUser from './Components/FormUser';
+import BasicCard from './Components/BasicCard';
 
 class App extends Component {
     state = {
-        grocery : ['salt', 'soy sauce', 'oil', 'rice', 'vinegar']
+        userData: [],
+    };
+
+    formUser = (props) => {
+        console.log(props);
+        console.log(this.state.userData)
+        let userData = [...this.state.userData, props];
+
+        this.setState({
+            userData,
+        });
     };
 
     render() {
         return (
             <div>
-                <Modal />
-                <div>
-                    <Child data = {this.state} />
-                </div>
+                <ButtonAppBar />
+                <FormUser formUser={this.formUser} />
+                <Display userData={this.state.userData} />
             </div>
         );
     }

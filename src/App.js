@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RouterApp from './RouteApp';
+import HOC from './Components/HOC';
 
 class App extends Component {
 
@@ -12,4 +13,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default HOC(App);

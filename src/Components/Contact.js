@@ -2,8 +2,9 @@ import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import HOC from "./HOC";
 
-const Contact = () => {
+const Contact = props => {
 
     const data = {
         "Contacts" : [
@@ -30,7 +31,7 @@ const Contact = () => {
           <Card
             sx={{
               maxWidth: "auto",
-              backgroundColor: "teal",
+              backgroundColor: props.color,
               float: "left",
               margin: "10px 10px 10px 0"
             }}
@@ -51,6 +52,6 @@ const Contact = () => {
       return <>{contactList}</>;
 };
 
-export default Contact;
+export default HOC(Contact);
 
 // 1000ms = 1s

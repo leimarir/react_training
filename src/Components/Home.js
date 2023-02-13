@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
+import HOC from "./HOC";
 
 class Home extends Component {
     state = {
@@ -32,7 +33,7 @@ class Home extends Component {
               return (
                 <React.Fragment key={user.id}>
                   <img src={user.imageUrl} alt="image1" />
-                  <p style={{ color: "red" }}>
+                  <p style={{ color: this.props.color }}>
                       {user.firstName} {user.lastName}
                   </p>
                   <p> {user.email}</p>
@@ -54,4 +55,4 @@ class Home extends Component {
       }
 }
 
-export default Home;
+export default HOC(Home);

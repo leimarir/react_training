@@ -28,12 +28,12 @@ class Home extends Component {
       render() {
         //conditional rendering: using tenary operator
         const postList = this.state.post.length ? (
-          <p>
+          <p style={{ backgroundColor: this.props.color }}>
             {this.state.post.map((user) => {
               return (
                 <React.Fragment key={user.id}>
                   <img src={user.imageUrl} alt="image1" />
-                  <p style={{ color: this.props.color }}>
+                  <p style={{ color: "red" }}>
                       {user.firstName} {user.lastName}
                   </p>
                   <p> {user.email}</p>
